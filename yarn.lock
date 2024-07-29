@@ -3373,6 +3373,11 @@ tailwind-variants@^0.2.1:
   dependencies:
     tailwind-merge "^2.2.0"
 
+tailwindcss-variable-colors@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmmirror.com/tailwindcss-variable-colors/-/tailwindcss-variable-colors-0.1.0.tgz#7ac89129cde676b94084be908e9a34abcb9c06c5"
+  integrity sha512-noSSQHb3+hv7XobCvd8diQpg76O2/5LhZVcAkINmPoxcm4DO+CU/G2/hhrm78q0jWpTOxH5hayBlr1xL8uDDEQ==
+
 tailwindcss@^3.4.6:
   version "3.4.7"
   resolved "https://registry.npmmirror.com/tailwindcss/-/tailwindcss-3.4.7.tgz#6092f18767f5933f59375b9afe558e592fc77201"

@@ -1,8 +1,13 @@
+import { createVariableColors, variableColorsPlugin } from 'tailwindcss-variable-colors'
+import colors from 'tailwindcss/colors'
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,mdx}'],
     theme: {
-        extend: {},
+        colors: createVariableColors(colors),
+        extend: {}
     },
-    plugins: [],
+    darkMode: ['class'],
+    plugins: [variableColorsPlugin(colors)]
 }

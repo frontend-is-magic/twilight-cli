@@ -23,8 +23,8 @@ export default function TopNavigator() {
     return (
         <div className="flex w-full flex-row items-center justify-between">
             <div className="flex grow flex-row items-center space-x-2">
-                <Link className="flex flex-row items-center gap-1" to="/">
-                    <Icon icon="fluent-emoji-high-contrast:unicorn" fontSize={24} />
+                <Link className="flex flex-row items-center gap-1 space-x-1" to="/">
+                    <Icon icon="mdi:horseshoe" fontSize={24} />
                     <p className="text-xl font-bold text-inherit">Twilight Cli</p>
                 </Link>
                 <div>
@@ -36,7 +36,7 @@ export default function TopNavigator() {
                     />
                 </div>
             </div>
-            <div className="flex flex-row space-x-3">
+            <div className="flex flex-row space-x-6">
                 <ThemeSwitchButton />
                 <Link target="_blank" to="https://github.com/FriendshipMagic/twilight-cli">
                     <GithubOutlined className="flex flex-col justify-center text-2xl" />

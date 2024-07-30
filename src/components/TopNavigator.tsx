@@ -10,7 +10,7 @@ const items: MenuItem[] = [
     {
         label: (
             <Link to="doc">
-                <span className="text-black">文档</span>
+                <span className="text-black">资源</span>
             </Link>
         ),
         key: '/doc',

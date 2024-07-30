@@ -1,5 +1,4 @@
 import { useLayoutEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { MoonFilled, SunFilled } from '@ant-design/icons'
 import useTheme from '../stores/useTheme.ts'
 
@@ -37,12 +36,12 @@ export default function ThemeSwitchButton() {
     }
 
     return (
-        <Link to="" className="" onClick={handleClick}>
+        <div className="cursor-pointer" onClick={handleClick}>
             {theme === 'dark' ? (
                 <SunFilled className="flex flex-col justify-center text-2xl" />
             ) : (
                 <MoonFilled className="flex flex-col justify-center text-2xl" />
             )}
-        </Link>
+        </div>
     )
 }

@@ -13,8 +13,7 @@ export default function About() {
             <div className="mt-8 flex items-center justify-center gap-3">
                 <Link to="doc">
                     <Button shape="round" className="text-lg" type="primary">
-                        {/*encode \'*/}
-                        Let&apos;s Start!
+                        Learn More
                         <ArrowRightOutlined />
                     </Button>
                 </Link>

@@ -1,27 +1,39 @@
 import { useLayoutEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { MoonFilled, SunFilled } from '@ant-design/icons'
-import useTheme, { Theme } from '../stores/useTheme.ts'
+import useTheme from '../stores/useTheme.ts'
 
 export default function ThemeSwitchButton() {
     const theme = useTheme((state) => state.theme)
     const setTheme = useTheme((state) => state.setTheme)
 
     useLayoutEffect(() => {
-        const themeStore = localStorage.getItem('theme') as Theme
         const html = document.querySelector('html')
-        if (themeStore && html) {
-            html.classList.add(themeStore)
-            setTheme(themeStore)
+
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        html?.classList.add(systemTheme)
+        setTheme(systemTheme)
+
+        // 无需刷新，自动根据系统设置切换主题
+        const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+            const newTheme = e.matches ? 'dark' : 'light'
+            html?.classList.toggle('dark', newTheme === 'dark')
+            setTheme(newTheme)
         }
-    }, [])
+
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+        mediaQuery.addEventListener('change', handleSystemThemeChange)
+
+        return () => {
+            mediaQuery.removeEventListener('change', handleSystemThemeChange)
+        }
+    }, [setTheme])
 
     const handleClick = () => {
         const html = document.querySelector('html')
         html?.classList.toggle('dark')
-        setTheme(theme === 'dark' ? 'light' : 'dark')
         const newTheme = html?.classList.contains('dark') ? 'dark' : 'light'
-        localStorage.setItem('theme', newTheme)
+        setTheme(newTheme)
     }
 
     return (

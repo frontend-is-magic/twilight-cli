@@ -2,7 +2,7 @@ import { GithubOutlined } from '@ant-design/icons'
 import { Menu, MenuProps } from 'antd'
 import { Link, useLocation } from 'react-router-dom'
 import { Icon } from '@iconify/react'
-import ThemeSwitchButton from './ThemeSwitchButton.tsx'
+import ThemeSwitch from './ThemeSwitch.tsx'
 import LanguageSwitch from './LanguageSwitch.tsx'
 
 type MenuItem = Required<MenuProps>['items'][number]
@@ -39,7 +39,7 @@ export default function TopNavigator() {
             </div>
             <div className="flex flex-row space-x-6">
                 <LanguageSwitch />
-                <ThemeSwitchButton />
+                <ThemeSwitch />
                 <Link target="_blank" to="https://github.com/FriendshipMagic/twilight-cli">
                     <GithubOutlined className="flex flex-col justify-center text-2xl" />
                 </Link>

@@ -2,7 +2,7 @@ import { useLayoutEffect } from 'react'
 import { MoonFilled, SunFilled } from '@ant-design/icons'
 import useTheme from '../stores/useTheme.ts'
 
-export default function ThemeSwitchButton() {
+export default function ThemeSwitch() {
     const theme = useTheme((state) => state.theme)
     const setTheme = useTheme((state) => state.setTheme)
 

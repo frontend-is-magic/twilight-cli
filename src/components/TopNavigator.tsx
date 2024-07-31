@@ -2,22 +2,27 @@ import { GithubOutlined } from '@ant-design/icons'
 import { Menu, MenuProps } from 'antd'
 import { Link, useLocation } from 'react-router-dom'
 import { Icon } from '@iconify/react'
-import ThemeSwitchButton from './ThemeSwitchButton.tsx'
+import ThemeSwitch from './ThemeSwitch.tsx'
+import LanguageSwitch from './LanguageSwitch.tsx'
+import useLanguage, { Language } from '../stores/useLanguage.ts'
 
 type MenuItem = Required<MenuProps>['items'][number]
 
-const items: MenuItem[] = [
-    {
-        label: (
-            <Link to="doc">
-                <span className="text-black">资源</span>
-            </Link>
-        ),
-        key: '/doc',
-    },
-]
+const getMenuItems = (language: Language): MenuItem[] => {
+    return [
+        {
+            label: (
+                <Link to="/learning">
+                    <span className="text-black">{language === 'zh-CN' ? '学习' : 'Learning'}</span>
+                </Link>
+            ),
+            key: '/learning',
+        },
+    ]
+}
 
 export default function TopNavigator() {
+    const language = useLanguage((state) => state.language)
     const { pathname } = useLocation()
 
     return (
@@ -29,15 +34,16 @@ export default function TopNavigator() {
                 </Link>
                 <div>
                     <Menu
-                        className="grow border-b-slate-50 bg-slate-50"
+                        className="w-full grow border-b-slate-50 bg-slate-50"
                         selectedKeys={[pathname]}
                         mode="horizontal"
-                        items={items}
+                        items={getMenuItems(language)}
                     />
                 </div>
             </div>
             <div className="flex flex-row space-x-6">
-                <ThemeSwitchButton />
+                <LanguageSwitch />
+                <ThemeSwitch />
                 <Link target="_blank" to="https://github.com/FriendshipMagic/twilight-cli">
                     <GithubOutlined className="flex flex-col justify-center text-2xl" />
                 </Link>

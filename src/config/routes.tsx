@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
                 element: <About />,
             },
             {
-                path: 'doc',
+                path: 'resource',
                 element: <Resource />,
             },
         ],

@@ -11,7 +11,7 @@ export default function About() {
                 <h2 className={subtitle({ class: 'mt-4' })}>Frontend is Magic: 快速构建现代react项目</h2>
             </div>
             <div className="mt-8 flex items-center justify-center gap-3">
-                <Link to="doc">
+                <Link to="resource">
                     <Button shape="round" className="text-lg" type="primary">
                         Learn More
                         <ArrowRightOutlined />

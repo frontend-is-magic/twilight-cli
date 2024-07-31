@@ -1,7 +1,7 @@
 import ToolCard from '../components/ToolCard.tsx'
 import { devTools } from '../utils/constant.tsx'
 
-export default function Resource() {
+export default function Learning() {
     return (
         <div className="flex h-full w-full grow flex-col items-center justify-center space-y-20">
             {new Array(2).fill(0).map((_, rowIndex) => (

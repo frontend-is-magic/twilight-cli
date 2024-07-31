@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Home from '../pages/Home.tsx'
 import About from '../pages/About.tsx'
-import Resource from '../pages/Resource.tsx'
+import Learning from '../pages/Learning.tsx'
 
 export const router = createBrowserRouter([
     {
@@ -13,8 +13,8 @@ export const router = createBrowserRouter([
                 element: <About />,
             },
             {
-                path: 'resource',
-                element: <Resource />,
+                path: 'learning',
+                element: <Learning />,
             },
         ],
     },

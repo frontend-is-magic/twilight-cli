@@ -4,21 +4,25 @@ import { Link, useLocation } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import ThemeSwitch from './ThemeSwitch.tsx'
 import LanguageSwitch from './LanguageSwitch.tsx'
+import useLanguage, { Language } from '../stores/useLanguage.ts'
 
 type MenuItem = Required<MenuProps>['items'][number]
 
-const items: MenuItem[] = [
-    {
-        label: (
-            <Link to="resource">
-                <span className="text-black">资源</span>
-            </Link>
-        ),
-        key: '/resource',
-    },
-]
+const getMenuItems = (language: Language): MenuItem[] => {
+    return [
+        {
+            label: (
+                <Link to="/learning">
+                    <span className="text-black">{language === 'zh-CN' ? '学习' : 'Learning'}</span>
+                </Link>
+            ),
+            key: '/learning',
+        },
+    ]
+}
 
 export default function TopNavigator() {
+    const language = useLanguage((state) => state.language)
     const { pathname } = useLocation()
 
     return (
@@ -30,10 +34,10 @@ export default function TopNavigator() {
                 </Link>
                 <div>
                     <Menu
-                        className="grow border-b-slate-50 bg-slate-50"
+                        className="w-full grow border-b-slate-50 bg-slate-50"
                         selectedKeys={[pathname]}
                         mode="horizontal"
-                        items={items}
+                        items={getMenuItems(language)}
                     />
                 </div>
             </div>

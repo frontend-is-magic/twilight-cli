@@ -11,12 +11,12 @@ export interface DevTool {
 export const devTools: DevTool[] = [
     {
         name: 'React',
-        icon: <Icon icon="devicon:react" className="text-8xl" />,
+        icon: <Icon icon="devicon:react" className="text-7xl md:text-8xl" />,
         link: 'https://react.dev/',
     },
     {
         name: 'Vite',
-        icon: <Icon icon="devicon:vitejs" className="text-8xl" />,
+        icon: <Icon icon="devicon:vitejs" className="text-7xl md:text-8xl" />,
         link: 'https://vitejs.dev/',
     },
     {
@@ -31,12 +31,12 @@ export const devTools: DevTool[] = [
     },
     {
         name: 'Ant Design',
-        icon: <Icon icon="devicon:antdesign" className="text-8xl" />,
+        icon: <Icon icon="devicon:antdesign" className="text-7xl md:text-8xl" />,
         link: 'https://ant.design/index-cn',
     },
     {
         name: 'Tailwind CSS',
-        icon: <Icon icon="devicon:tailwindcss" className="text-8xl" />,
+        icon: <Icon icon="devicon:tailwindcss" className="text-7xl md:text-8xl" />,
         link: 'https://tailwindcss.com',
     },
 ]

@@ -13,7 +13,9 @@ const getMenuItems = (language: Language): MenuItem[] => {
         {
             label: (
                 <Link to="/learning">
-                    <span className="text-black">{language === 'zh-CN' ? '学习' : 'Learning'}</span>
+                    <span className="text-sm text-black md:text-[1rem]">
+                        {language === 'zh-CN' ? '学习' : 'Learning'}
+                    </span>
                 </Link>
             ),
             key: '/learning',
@@ -30,7 +32,8 @@ export default function TopNavigator() {
             <div className="flex grow flex-row items-center space-x-2">
                 <Link className="flex flex-row items-center gap-1 space-x-1" to="/">
                     <Icon icon="mdi:horseshoe" fontSize={24} />
-                    <p className="text-xl font-bold text-inherit">Twilight Cli</p>
+                    <p className="text-xl text-inherit">Twilight</p>
+                    <p className="hidden text-xl text-inherit md:flex">Cli</p>
                 </Link>
                 <div>
                     <Menu

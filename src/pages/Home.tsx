@@ -15,8 +15,8 @@ export default function Home() {
             </Content>
             <Footer className="flex h-10 items-center justify-center bg-slate-50 text-center text-black">
                 Powered by&nbsp;
-                <Link className="text-blue-500" target="_blank" to="https://github.com/FriendshipMagic">
-                    FriendshipMagic
+                <Link className="text-blue-500" target="_blank" to="https://github.com/frontend-is-magic">
+                    Frontend Is Magic
                 </Link>
             </Footer>
         </Layout>

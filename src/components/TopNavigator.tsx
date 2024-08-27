@@ -47,7 +47,7 @@ export default function TopNavigator() {
             <div className="flex flex-row space-x-6">
                 <LanguageSwitch />
                 <ThemeSwitch />
-                <Link target="_blank" to="https://github.com/FriendshipMagic/twilight-cli">
+                <Link target="_blank" to="https://github.com/frontend-is-magic/twilight-cli">
                     <GithubOutlined className="flex flex-col justify-center text-2xl" />
                 </Link>
             </div>

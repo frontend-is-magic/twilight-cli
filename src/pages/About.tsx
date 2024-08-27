@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom'
 import { Button } from 'antd'
 import { ArrowRightOutlined } from '@ant-design/icons'
 import useLanguage from '../stores/useLanguage.ts'
+import CopyableCode from '../components/CopyableCode.tsx'
 
 export default function About() {
     const language = useLanguage((state) => state.language)
 
     return (
-        <div className="flex h-full w-full grow flex-col items-center justify-center">
+        <div className="flex h-[90vh-4rem] w-full grow flex-col items-center justify-center">
             <div className="inline-block max-w-lg justify-center text-center">
                 <span className={title({ color: 'violet' })}>Twilight Cli</span>
                 <h2 className={subtitle({ class: 'mt-4' })}>
@@ -24,6 +25,14 @@ export default function About() {
                         <ArrowRightOutlined />
                     </Button>
                 </Link>
+            </div>
+            <div className="absolute bottom-14 hidden flex-col items-center justify-center md:flex">
+                <div>
+                    <CopyableCode code="npm install -g create-twilight-app" />
+                </div>
+                <div>
+                    <CopyableCode code="npx create-twilight-app" />
+                </div>
             </div>
         </div>
     )

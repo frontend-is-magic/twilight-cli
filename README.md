@@ -31,4 +31,4 @@ npx create-twilight-app
 
 ## Parent Module: Create-Twilight-App
 
-[https://github.com/FriendshipMagic/create-twilight-app](https://github.com/FriendshipMagic/create-twilight-app)
+[https://github.com/frontend-is-magic/create-twilight-app](https://github.com/frontend-is-magic/create-twilight-app)
